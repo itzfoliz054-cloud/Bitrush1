@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BitRush - Games Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <img src="img.png" alt="BitRush Logo" class="logo">
+  <h1>Welcome to BitRush 🎉</h1>
+  <p id="welcome-user"></p>
+  <button onclick="logout()">Log Out</button>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn" onclick="switchTab('games')">Games</button>
+  <button class="tab-btn" onclick="switchTab('admin')" id="admin-tab-btn" style="display:none;">Admin Panel</button>
+</div>
+
+<!-- Games Tab -->
+<div id="games-tab" class="tab-content">
+  <div class="tab-buttons">
+    <button onclick="filterGames('all')">All</button>
+    <button onclick="filterGames('link')">Link Games</button>
+    <button onclick="filterGames('mini')">Mini Games</button>
+  </div>
+  <div class="games-grid" id="games-grid"></div>
+</div>
+
+<!-- Admin Panel -->
+<div id="admin-tab" class="tab-content" style="display:none;">
+  <h2>Admin Panel</h2>
+
+  <!-- Users Management -->
+  <div class="admin-section">
+    <h3>Manage Users</h3>
+    <input type="text" id="new-username" placeholder="Username">
+    <input type="password" id="new-password" placeholder="Password">
+    <label><input type="checkbox" id="new-admin"> Admin</label>
+    <button onclick="addUser()">Add User</button>
+    <div id="user-list"></div>
+  </div>
+
+  <!-- Games Management -->
+  <div class="admin-section">
+    <h3>Manage Games</h3>
+    <input type="text" id="new-game-name" placeholder="Game Name">
+    <input type="text" id="new-game-img" placeholder="Image Filename (e.g. snake.jfif)">
+    <input type="text" id="new-game-url" placeholder="Game URL (optional)">
+    <select id="new-game-type">
+      <option value="link">Link Game</option>
+      <option value="snake">Snake</option>
+      <option value="tic-tac-toe">Tic-Tac-Toe</option>
+    </select>
+    <button onclick="addGame()">Add Game</button>
+    <div id="admin-games-grid"></div>
+  </div>
+
+  <!-- Danger Zone (FOUNDER only) -->
+  <div class="admin-section">
+    <h3>Danger Zone (FOUNDER only)</h3>
+    <button onclick="resetAllAccountsToTwoAdmins()" style="background:#ff4b4b;">Reset Accounts → FOUNDER & ADMIN</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+initializeData();
+checkAuth();
+renderGames();
+renderAdmin();
+</script>
+</body>
+</html>
