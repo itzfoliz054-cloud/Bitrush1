@@ -1,0 +1,87 @@
+body {
+  background: #050617;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+}
+
+.form-container {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  width: 300px;
+  margin-top: 50px;
+}
+
+input, select {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+button {
+  width: 95%;
+  padding: 10px;
+  margin-top: 10px;
+  background: linear-gradient(90deg,#00b7ff,#ff2fb7);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover { opacity: 0.9; }
+.delete-btn { background: #ff4b4b; margin-top: 5px; }
+.fullscreen-btn { background: #00ff80; margin-top: 5px; }
+.error { color: #ff8080; margin-top: 10px; }
+
+header { text-align: center; padding: 20px; background: rgba(255,255,255,0.05); width: 100%; }
+
+.tabs { display: flex; margin: 10px 0; gap: 10px; }
+.tab-btn { padding: 10px 20px; background: rgba(255,255,255,0.1); border: none; border-radius: 8px; cursor: pointer; }
+.tab-btn:hover { background: rgba(0,183,255,0.3); }
+
+.tab-content { width: 90%; max-width: 1200px; margin-bottom: 20px; }
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  gap: 20px;
+}
+
+.game-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+.game-card:hover { transform: scale(1.05); }
+.game-thumbnail { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin: 10px 0; }
+
+.admin-section { margin-bottom: 20px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; }
+.admin-section h3 { margin-top: 0; }
+#user-list div { margin: 5px 0; }
+
+.tab-buttons { display: flex; gap: 10px; margin-bottom: 10px; }
+.tab-buttons button { width: auto; padding: 5px 15px; font-size: 0.9em; }
